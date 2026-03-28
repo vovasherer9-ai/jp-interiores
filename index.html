@@ -13,28 +13,34 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f4f4;
-    text-align: center;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 220px;
+    margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 34px;
 }
 
 .description {
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .services {
     background: white;
     padding: 20px;
-    margin-top: 25px;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .services ul {
@@ -43,21 +49,29 @@ h1 {
 }
 
 .services li {
-    padding: 8px 0;
+    padding: 8px;
     font-size: 18px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .btn {
     display: inline-block;
-    margin: 10px;
     padding: 15px 30px;
     font-size: 18px;
     text-decoration: none;
     border-radius: 8px;
     color: white;
-}
-
-.whatsapp {
     background: #25D366;
 }
 
@@ -73,12 +87,12 @@ h1 {
 
 <div class="container">
 
-<img src="logo.png" style="max-width:200px; margin-bottom:15px;">
+<img src="logo.png" class="logo">
 
 <h1>JP INTERIORES</h1>
 
 <p class="description">
-Especialistas em acabamento interno com equipe profissional.<br>
+Serviços de acabamento interno com equipe profissional.<br>
 Atendimento em João Pessoa e região.<br>
 Orçamento sem compromisso.
 </p>
@@ -99,7 +113,17 @@ Orçamento sem compromisso.
 
 </div>
 
-<a class="btn whatsapp"
+<h2>Nossos Trabalhos</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+<a class="btn"
 href="https://wa.me/5583986099678"
 target="_blank">
 
