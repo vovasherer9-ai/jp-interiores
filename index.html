@@ -4,88 +4,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>JP Interiores</title>
 
 <style>
-/* Фон страницы */
+/* === Фон страницы === */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url("background.jpg"); /* сюда имя вашего фонового файла */
+    background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* Контейнер с белым фоном и закруглениями */
+/* === Контейнер === */
 .container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.95); /* чуть прозрачный белый */
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/* Логотип */
+/* === Логотип === */
 .logo {
     max-width: 220px;
     margin-bottom: 15px;
 }
 
-/* Заголовки */
+/* === Заголовки === */
 h1 {
     font-size: 34px;
     margin-bottom: 10px;
 }
-
 h2 {
     font-size: 28px;
     margin-bottom: 15px;
 }
 
-/* Описание */
+/* === Описание === */
 .description {
     font-size: 18px;
     margin-bottom: 30px;
 }
 
-/* Блок услуг */
+/* === Услуги === */
 .services {
     background: #f7f7f7;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
 }
-
 .services ul {
     list-style: none;
     padding: 0;
 }
-
 .services li {
     padding: 8px 0;
     font-size: 18px;
 }
 
-/* Галерея */
+/* === Галерея === */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     margin-bottom: 30px;
 }
-
 .gallery img {
     width: 100%;
     border-radius: 10px;
     display: block;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-/* Кнопка WhatsApp */
+/* === Кнопка WhatsApp === */
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -96,28 +95,87 @@ h2 {
     background: #25D366;
     margin-bottom: 30px;
 }
+.btn:hover {
+    background: #128C7E;
+}
 
-/* Карта */
+/* === Карта === */
 .map {
     margin-top: 30px;
 }
-
 .map iframe {
     width: 100%;
     height: 300px;
     border: 0;
     border-radius: 10px;
 }
+
+/* === Отзывы === */
+.testimonials {
+    background: rgba(247, 247, 247, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.testimonial-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.testimonial-item p {
+    font-style: italic;
+    margin: 0 0 5px 0;
+}
+.testimonial-item span {
+    font-weight: bold;
+}
+
+/* === Форма переписки === */
+.contact-form {
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+.contact-form input, 
+.contact-form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.contact-form button {
+    padding: 12px 25px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background: #128C7E;
+}
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
 
+<!-- Логотип и название -->
 <img src="logo.png" class="logo">
-
 <h1>JP INTERIORES</h1>
 
 <p class="description">
@@ -126,7 +184,8 @@ Atendimento em João Pessoa e região.<br>
 Orçamento sem compromisso.
 </p>
 
-<div class="services">
+<!-- Блок услуг -->
+<div class="services" id="services">
 <h2>Nossos Serviços</h2>
 <ul>
 <li>✔ Assentamento de azulejos</li>
@@ -137,19 +196,49 @@ Orçamento sem compromisso.
 </ul>
 </div>
 
+<!-- Галерея -->
 <h2>Nossos Trabalhos</h2>
-
-<div class="gallery">
+<div class="gallery" id="gallery">
 <img src="foto1.jpg" alt="Trabalho 1">
 <img src="foto2.jpg" alt="Trabalho 2">
 <img src="foto3.jpg" alt="Trabalho 3">
-<!-- Добавь сюда новые фото по такому же принципу -->
+<!-- Добавь новые фото так же -->
 </div>
 
+<!-- WhatsApp -->
 <a class="btn" href="https://wa.me/5583986099678" target="_blank">
 📲 Falar no WhatsApp
 </a>
 
+<!-- Отзывы -->
+<div class="testimonials" id="testimonials">
+<h2>Depoimentos de Clientes</h2>
+<div class="testimonial-item">
+<p>“Trabalho impecável! Super recomendo a equipe da JP Interiores.”</p>
+<span>– Maria S.</span>
+</div>
+<div class="testimonial-item">
+<p>“Profissionais muito competentes, atendimento rápido e de qualidade.”</p>
+<span>– João P.</span>
+</div>
+<div class="testimonial-item">
+<p>“Fiquei muito satisfeito com o acabamento decorativo e pintura.”</p>
+<span>– Carla M.</span>
+</div>
+</div>
+
+<!-- Форма переписки -->
+<div class="contact-form" id="contact">
+<h2>Entre em Contato</h2>
+<form action="mailto:seuemail@dominio.com" method="post" enctype="text/plain">
+<input type="text" name="nome" placeholder="Seu Nome" required><br><br>
+<input type="email" name="email" placeholder="Seu Email" required><br><br>
+<textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea><br><br>
+<button type="submit">Enviar</button>
+</form>
+</div>
+
+<!-- Карта -->
 <div class="map">
 <iframe
 src="https://www.google.com/maps?q=R.+José+Ferreira+Ramos,+51+João+Pessoa&output=embed"
@@ -164,6 +253,5 @@ João Pessoa - PB, 58037-545
 </p>
 
 </div>
-
 </body>
 </html>
