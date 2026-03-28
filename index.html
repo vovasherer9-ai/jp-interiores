@@ -5,37 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JP Interiores</title>
 <style>
+/* Фон сайта */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
 }
 
-/* Фиксированный фон только на больших экранах */
-@media (min-width: 768px) {
-    body {
-        background-attachment: fixed;
-    }
-}
-
+/* Контейнер по центру с прозрачностью */
 .container {
+    width: 95%;
     max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background: white;
+    background: rgba(255, 255, 255, 0.2); /* прозрачный белый фон */
     border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2); /* тень для читаемости текста */
 }
-.logo {
-    max-width: 220px;
-    margin-bottom: 15px;
-}
+
+/* Стили внутри контейнера */
+.logo { max-width: 220px; margin-bottom: 15px; }
 h1 { font-size: 34px; }
 .description { font-size: 18px; margin-bottom: 20px; }
 .services {
-    background: #f7f7f7;
+    background: rgba(247, 247, 247, 0.3);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -59,18 +59,26 @@ h1 { font-size: 34px; }
     background: #25D366;
     margin-bottom: 30px;
 }
+
 /* Отзывы */
 .testimonials {
-    background: rgba(247, 247, 247, 0.95);
+    background: rgba(255, 255, 255, 0.2);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 30px;
     text-align: left;
 }
 .testimonials h2 { text-align: center; margin-bottom: 20px; }
-.testimonial-item { margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.testimonial-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 .testimonial-item p { font-style: italic; margin: 0 0 5px 0; }
 .testimonial-item span { font-weight: bold; }
+
 /* Форма добавления отзывов */
 #review-form input, #review-form textarea {
     width: 80%;
@@ -88,8 +96,10 @@ h1 { font-size: 34px; }
     cursor: pointer;
 }
 #review-form button:hover { background: #128C7E; }
+
 /* Карта */
 .map { margin-top: 30px; }
+
 </style>
 </head>
 <body>
@@ -101,6 +111,7 @@ Serviços de acabamento interno com equipe profissional.<br>
 Atendimento em João Pessoa e região.<br>
 Orçamento sem compromisso.
 </p>
+
 <div class="services">
 <h2>Nossos Serviços</h2>
 <ul>
@@ -111,12 +122,14 @@ Orçamento sem compromisso.
 <li>✔ Divisórias em drywall</li>
 </ul>
 </div>
+
 <h2>Nossos Trabalhos</h2>
 <div class="gallery">
 <img src="foto1.jpg">
 <img src="foto2.jpg">
 <img src="foto3.jpg">
 </div>
+
 <a class="btn" href="https://wa.me/5583986099678" target="_blank">📲 Falar no WhatsApp</a>
 
 <!-- Блок отзывов -->
