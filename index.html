@@ -1,12 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JP Interiores</title>
+<style>
+/* Фон сайта на весь экран */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-
-    /* фон сайта чуть уменьшен */
     background-image: url("background.jpg");
-    background-size: 70%;           /* масштаб 70% вместо 100% */
+    background-size: cover;          /* фон на весь экран */
     background-repeat: no-repeat;
-    background-position: center top; /* центрирование */
+    background-position: center;
     min-height: 100vh;
 }
 
@@ -18,11 +24,14 @@ body {
     margin: auto;
 }
 
-/* Текст и заголовки */
+/* Основной текст и заголовки */
 h1, h2, h3, p, li {
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    color: #fff; /* белый текст */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* тень для читаемости */
 }
+
+.services ul { list-style: none; padding: 0; }
+.services li { padding: 8px; font-size: 18px; }
 
 /* Галерея */
 .gallery {
@@ -81,3 +90,91 @@ h1, h2, h3, p, li {
 
 /* Карта */
 .map { margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<img src="logo.png" class="logo" style="max-width:220px; margin-bottom:15px;">
+
+<h1>JP INTERIORES</h1>
+<p class="description">
+Serviços de acabamento interno com equipe profissional.<br>
+Atendimento em João Pessoa e região.<br>
+Orçamento sem compromisso.
+</p>
+
+<div class="services">
+<h2>Nossos Serviços</h2>
+<ul>
+<li>✔ Assentamento de azulejos</li>
+<li>✔ Preparação e pintura de paredes</li>
+<li>✔ Acabamento decorativo</li>
+<li>✔ Instalação de tetos em drywall</li>
+<li>✔ Divisórias em drywall</li>
+</ul>
+</div>
+
+<h2>Nossos Trabalhos</h2>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+
+<a class="btn" href="https://wa.me/5583986099678" target="_blank">📲 Falar no WhatsApp</a>
+
+<!-- Отзывы -->
+<div class="testimonials" id="testimonials">
+<h2>Depoimentos de Clientes</h2>
+<div id="review-list"></div>
+<h3>Deixe seu depoimento</h3>
+<form id="review-form">
+<input type="text" id="review-name" placeholder="Seu Nome" required><br><br>
+<textarea id="review-text" placeholder="Seu depoimento" rows="3" required></textarea><br><br>
+<button type="submit">Enviar</button>
+</form>
+</div>
+
+<!-- Карта -->
+<div class="map">
+<iframe
+src="https://www.google.com/maps?q=R.+José+Ferreira+Ramos,+51+João+Pessoa&output=embed"
+width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<p style="color:#fff; text-shadow:1px 1px 2px rgba(0,0,0,0.6);">
+📍 R. José Ferreira Ramos, 51 - Jardim Oceania<br>
+João Pessoa - PB, 58037-545
+</p>
+
+</div>
+
+<script>
+// Работа с отзывами через LocalStorage
+const reviewList = document.getElementById('review-list');
+const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+function displayReviews() {
+    reviewList.innerHTML = '';
+    reviews.forEach(r => {
+        const div = document.createElement('div');
+        div.className = 'testimonial-item';
+        div.innerHTML = `<p>“${r.text}”</p><span>– ${r.name}</span>`;
+        reviewList.appendChild(div);
+    });
+}
+
+displayReviews();
+
+document.getElementById('review-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('review-name').value;
+    const text = document.getElementById('review-text').value;
+    reviews.push({name, text});
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+    displayReviews();
+    this.reset();
+});
+</script>
+</body>
+</html>
