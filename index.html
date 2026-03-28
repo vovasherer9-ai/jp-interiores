@@ -5,35 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JP Interiores</title>
 <style>
-/* Фон на весь экран */
+/* Фон сайта */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url("background.jpg");
-    background-size: cover;
+    background-image: url("background-optimized.jpg"); /* твой оптимизированный фон */
+    background-size: cover;        /* покрывает весь экран */
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 100vh;
     color: #fff;
+    min-height: 100vh;
 }
 
 /* Контейнер */
 .container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px;
+    text-align: center;
 }
 
 /* Логотип */
 .logo {
     max-width: 220px;
-    display: block;
-    margin: 0 auto 15px auto;
+    margin-bottom: 15px;
 }
 
 /* Заголовки и текст */
 h1, h2, h3, p, li {
-    text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
 }
 
@@ -89,13 +88,11 @@ h1, h2, h3, p, li {
 #review-form input, #review-form textarea {
     width: 80%;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px auto;
     border-radius: 5px;
     border: none;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.7);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 #review-form button {
     padding: 12px 25px;
@@ -103,20 +100,15 @@ h1, h2, h3, p, li {
     color: white;
     border: none;
     border-radius: 5px;
+    margin-top: 10px;
     cursor: pointer;
-    display: block;
-    margin: 10px auto;
 }
 #review-form button:hover { background: #128C7E; }
 
 /* Карта */
-.map {
-    margin-top: 30px;
-    text-align: center;
-}
+.map { margin-top: 30px; }
 .map iframe {
     width: 100%;
-    max-width: 1000px;
     height: 300px;
     border: 0;
     border-radius: 10px;
@@ -132,61 +124,61 @@ h1, h2, h3, p, li {
 
 <div class="container">
 
-<img src="logo.png" class="logo">
+    <img src="logo.png" class="logo">
 
-<h1>JP INTERIORES</h1>
+    <h1>JP INTERIORES</h1>
 
-<p>Serviços de acabamento interno com equipe profissional.<br>
-Atendimento em João Pessoa e região.<br>
-Orçamento sem compromisso.</p>
+    <p>Serviços de acabamento interno com equipe profissional.<br>
+    Atendimento em João Pessoa e região.<br>
+    Orçamento sem compromisso.</p>
 
-<div class="services">
-<h2>Nossos Serviços</h2>
-<ul>
-<li>✔ Assentamento de azulejos</li>
-<li>✔ Preparação e pintura de paredes</li>
-<li>✔ Acabamento decorativo</li>
-<li>✔ Instalação de tetos em drywall</li>
-<li>✔ Divisórias em drywall</li>
-</ul>
-</div>
+    <div class="services">
+        <h2>Nossos Serviços</h2>
+        <ul>
+            <li>✔ Assentamento de azulejos</li>
+            <li>✔ Preparação e pintura de paredes</li>
+            <li>✔ Acabamento decorativo</li>
+            <li>✔ Instalação de tetos em drywall</li>
+            <li>✔ Divisórias em drywall</li>
+        </ul>
+    </div>
 
-<h2>Nossos Trabalhos</h2>
-<div class="gallery">
-<img src="foto1.jpg" alt="Trabalho 1">
-<img src="foto2.jpg" alt="Trabalho 2">
-<img src="foto3.jpg" alt="Trabalho 3">
-</div>
+    <h2>Nossos Trabalhos</h2>
+    <div class="gallery">
+        <img src="foto1.jpg" alt="Trabalho 1">
+        <img src="foto2.jpg" alt="Trabalho 2">
+        <img src="foto3.jpg" alt="Trabalho 3">
+    </div>
 
-<a class="btn" href="https://wa.me/5583986099678" target="_blank">📲 Falar no WhatsApp</a>
+    <a class="btn" href="https://wa.me/5583986099678" target="_blank">📲 Falar no WhatsApp</a>
 
-<div class="testimonials">
-<h2>Depoimentos de Clientes</h2>
-<div id="review-list"></div>
+    <div class="testimonials">
+        <h2>Depoimentos de Clientes</h2>
+        <div id="review-list"></div>
 
-<h3>Deixe seu depoimento</h3>
-<form id="review-form">
-<input type="text" id="review-name" placeholder="Seu Nome" required>
-<textarea id="review-text" placeholder="Seu depoimento" rows="3" required></textarea>
-<button type="submit">Enviar</button>
-</form>
-</div>
+        <h3>Deixe seu depoimento</h3>
+        <form id="review-form">
+            <input type="text" id="review-name" placeholder="Seu Nome" required>
+            <textarea id="review-text" placeholder="Seu depoimento" rows="3" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 
-<div class="map">
-<iframe
-src="https://www.google.com/maps?q=R.+José+Ferreira+Ramos,+51+João+Pessoa&output=embed"
-allowfullscreen="" loading="lazy"></iframe>
-</div>
+    <div class="map">
+        <iframe
+        src="https://www.google.com/maps?q=R.+José+Ferreira+Ramos,+51+João+Pessoa&output=embed"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
 
-<p style="text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,0.6);">
-📍 R. José Ferreira Ramos, 51 - Jardim Oceania<br>
-João Pessoa - PB, 58037-545
-</p>
+    <p style="text-shadow:1px 1px 2px rgba(0,0,0,0.6);">
+    📍 R. José Ferreira Ramos, 51 - Jardim Oceania<br>
+    João Pessoa - PB, 58037-545
+    </p>
 
 </div>
 
 <script>
-// Работа с отзывами через LocalStorage
+// Отзывы через LocalStorage
 const reviewList = document.getElementById('review-list');
 const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
