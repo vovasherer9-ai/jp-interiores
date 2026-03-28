@@ -5,33 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JP Interiores</title>
 <style>
-/* Фон сайта на весь экран */
+/* Фон на весь экран */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("background.jpg");
-    background-size: cover;          /* фон на весь экран */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh;
+    color: #fff;
 }
 
-/* Контейнер без фона */
+/* Контейнер */
 .container {
-    width: 95%;
     max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    margin: auto;
 }
 
-/* Основной текст и заголовки */
+/* Логотип */
+.logo {
+    max-width: 220px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+/* Заголовки и текст */
 h1, h2, h3, p, li {
-    color: #fff; /* белый текст */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* тень для читаемости */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
 }
 
-.services ul { list-style: none; padding: 0; }
-.services li { padding: 8px; font-size: 18px; }
+/* Сервисы */
+.services ul {
+    list-style: none;
+    padding: 0;
+}
+.services li {
+    padding: 8px;
+    font-size: 18px;
+}
 
 /* Галерея */
 .gallery {
@@ -59,7 +73,9 @@ h1, h2, h3, p, li {
 }
 
 /* Отзывы */
-.testimonials { padding: 0; margin-bottom: 30px; }
+.testimonials {
+    margin-bottom: 30px;
+}
 .testimonial-item {
     background: rgba(0,0,0,0.15);
     padding: 15px;
@@ -77,6 +93,9 @@ h1, h2, h3, p, li {
     border-radius: 5px;
     border: none;
     background: rgba(255,255,255,0.6);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #review-form button {
     padding: 12px 25px;
@@ -85,24 +104,41 @@ h1, h2, h3, p, li {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin: 10px auto;
 }
 #review-form button:hover { background: #128C7E; }
 
 /* Карта */
-.map { margin-top: 30px; }
+.map {
+    margin-top: 30px;
+    text-align: center;
+}
+.map iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
+
 <div class="container">
 
-<img src="logo.png" class="logo" style="max-width:220px; margin-bottom:15px;">
+<img src="logo.png" class="logo">
 
 <h1>JP INTERIORES</h1>
-<p class="description">
-Serviços de acabamento interno com equipe profissional.<br>
+
+<p>Serviços de acabamento interno com equipe profissional.<br>
 Atendimento em João Pessoa e região.<br>
-Orçamento sem compromisso.
-</p>
+Orçamento sem compromisso.</p>
 
 <div class="services">
 <h2>Nossos Serviços</h2>
@@ -117,32 +153,32 @@ Orçamento sem compromisso.
 
 <h2>Nossos Trabalhos</h2>
 <div class="gallery">
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
+<img src="foto1.jpg" alt="Trabalho 1">
+<img src="foto2.jpg" alt="Trabalho 2">
+<img src="foto3.jpg" alt="Trabalho 3">
 </div>
 
 <a class="btn" href="https://wa.me/5583986099678" target="_blank">📲 Falar no WhatsApp</a>
 
-<!-- Отзывы -->
-<div class="testimonials" id="testimonials">
+<div class="testimonials">
 <h2>Depoimentos de Clientes</h2>
 <div id="review-list"></div>
+
 <h3>Deixe seu depoimento</h3>
 <form id="review-form">
-<input type="text" id="review-name" placeholder="Seu Nome" required><br><br>
-<textarea id="review-text" placeholder="Seu depoimento" rows="3" required></textarea><br><br>
+<input type="text" id="review-name" placeholder="Seu Nome" required>
+<textarea id="review-text" placeholder="Seu depoimento" rows="3" required></textarea>
 <button type="submit">Enviar</button>
 </form>
 </div>
 
-<!-- Карта -->
 <div class="map">
 <iframe
 src="https://www.google.com/maps?q=R.+José+Ferreira+Ramos,+51+João+Pessoa&output=embed"
-width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+allowfullscreen="" loading="lazy"></iframe>
 </div>
-<p style="color:#fff; text-shadow:1px 1px 2px rgba(0,0,0,0.6);">
+
+<p style="text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,0.6);">
 📍 R. José Ferreira Ramos, 51 - Jardim Oceania<br>
 João Pessoa - PB, 58037-545
 </p>
@@ -176,5 +212,6 @@ document.getElementById('review-form').addEventListener('submit', function(e){
     this.reset();
 });
 </script>
+
 </body>
 </html>
