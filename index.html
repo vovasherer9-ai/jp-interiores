@@ -11,8 +11,15 @@ body {
     background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
+
+/* Фиксированный фон только на больших экранах */
+@media (min-width: 768px) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
